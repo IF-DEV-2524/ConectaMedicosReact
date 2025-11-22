@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-width: 150px;
+    background-color: #208a5879
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 2200px;
+    margin: 0 auto;
+    background-color: #208a5879;
+    padding: 20px;
+    text-align: center;
+}
+
+#logo {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.centralizaTexto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+}
+
+.userImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: auto;
+    background-color: white;
+}
+
+.controladorList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 20px;
+    margin-left: 50px;
+    font-family: "Elms Sans", sans-serif;
+    ;
+}
+
+.listPages {
+    color: white;
+    background-color: rgb(6, 6, 105);
+    border-radius: 5% !important;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#page0:hover,
+#page1:hover,
+#page2:hover,
+#page3:hover,
+#page4:hover,
+#page5:hover {
+    transform: scale(1.1);
+    background-color: rgba(97, 223, 181, 0.5);
+    transition: 0.5s;
+}
+
+.btnNavegador {
+    display: flex !important;
+    background-color: transparent;
+    border-radius: 30% !important;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#btnMobile {
+    display: none;
+}
+
+@media (max-width: 2200px) {
+
+    .btnNavegador {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 1840px) {
+    .controladorList {
+        margin-left: 20px;
+    }
+
+    .userImage {
+        position: relative;
+        top: -70px
+    }
+}
+
+@media (max-width: 1450px) {
+
+    .head {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        height: 140px;
+    }
+
+    .userImage {
+        position: relative;
+        top: -0px !important;
+    }
+
+    #btnMobile {
+        display: block;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(6px);
+        border-radius: 10px;
+        border-radius: 10%;
+    }
+
+    .efectsBtn {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        border-radius: 25%;
+    }
+
+    .efectsBtn.active {
+        animation: activeBtn 2s forwards;
+    }
+
+    .efectsBtn.desactive {
+        animation: DesactiveBtn 2s forwards;
+    }
+
+    @keyframes activeBtn {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(-45deg);
+        }
+    }
+
+    @keyframes DesactiveBtn {
+        0% {
+            transform: rotate(-45deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+
+    .efectsBtn::after {
+        content: "";
+        position: absolute;
+        right: 0%;
+        bottom: 10px;
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        border-radius: 25%;
+        animation: btnTranslateDesactive 2s forwards;
+    }
+
+    .efectsBtn::before {
+        content: "";
+        position: absolute;
+        right: 0%;
+        top: 10px;
+        width: 100%;
+        height: 5px;
+        background-color: black;
+        border-radius: 25%;
+        animation: btnTranslabtnTranslateDesactive 2s forwards;
+    }
+
+    .efectsBtn.active::after {
+        animation: btnTranslateaActiveAfter 2s forwards;
+    }
+
+    .efectsBtn.active::before {
+        animation: btnTranslateActiveBefore 2s forwards;
+    }
+
+    .efectsBtn.desactive::after {
+        animation: btnTranslateDesactiveAfter 2s ease forwards;
+    }
+
+    .efectsBtn.desactive::before {
+        animation: btnTranslateDesactiveBefore 3s ease forwards;
+    }
+
+    @keyframes btnTranslateaActiveAfter {
+        0% {
+
+            transform: translate(0px, 0px);
+        }
+
+        50% {
+            transform: translate(0px, 10px);
+        }
+
+        100% {
+
+            transform: translate(0px, 10px) rotate(-90deg);
+        }
+    }
+
+    @keyframes btnTranslateActiveBefore {
+        0% {
+            transform: translate(0px, 0px);
+
+        }
+
+        50% {
+            opacity: 0;
+            transform: translate(0px, -10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0px, -10px) rotate(-90deg);
+        }
+    }
+
+
+    @keyframes btnTranslateDesactiveAfter {
+        0% {
+
+            transform: translate(0px, 10px) rotate(-90deg);
+        }
+
+        50% {
+
+            transform: translate(0px, 10px) rotate(0deg);
+        }
+
+        100% {
+
+            transform: translate(0px, 0px);
+        }
+    }
+
+    @keyframes btnTranslateDesactiveBefore {
+        0% {
+            opacity: 0;
+            transform: translate(0px, -10px) rotate(-90deg);
+        }
+
+        50% {
+            opacity: 0;
+            transform: translate(0px, -10px) rotate(0deg);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0px, 0px);
+        }
+    }
+
+    .navegaPgn.efectsBtn.desactive{
+        position: absolute;
+        width: 120px
+       }
+
+    .controladorList {
+        position: absolute;
+        flex-direction: column;
+
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-left: 0;
+        width: 100vw;
+        max-width: 1370px;
+        min-width: 120px;
+
+    }
+
+    .userImage {
+        position: relative;
+        top: -140px
+    }
+
+    .navegaPgn.desactive{
+        position: absolute;
+        transform: translateY(-500px);
+    }
+    
+    .listPages{
+        width: 100%;
+    }
+
+    .btnNavegador{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    #controleCentral{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
