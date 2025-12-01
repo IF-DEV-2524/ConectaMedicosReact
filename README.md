@@ -1,0 +1,1 @@
+Projeto tem por finalidade inicial facilitar agendamentos para consultas médicas, assim como a identificação dos polos em que determinado médico de determinada área de especialidade atende, bem como o acesso a lista de agendamentos e consultas realizadas
