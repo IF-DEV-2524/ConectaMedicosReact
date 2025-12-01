@@ -18,7 +18,19 @@ function SectionHome() {
           <div className='textLoginSection1'>
             <div className='section1DireitoTopo'>
              <form id='formularioHome' action="" method="get">
-              <h2>Login</h2>
+
+              <h2>LOGIN</h2>
+
+              <p className='paragrafoForm'>USUÁRIO</p>
+              <input className='inputLogin' type="text" name="usuario" id="usuarioForm" placeholder='EDUARDA' required />
+
+              <p className='paragrafoForm'>SENHA</p>
+              <input className='inputLogin' type="password" name="senha" id="senhaForm" />
+
+              <div className='btnLogin'>
+                <button type='button'>ENTRAR</button>
+                <button type='reset'>LIMPAR</button>
+              </div>
              </form>
             </div>
             <div className='textSection1DireitoBaixo'>
