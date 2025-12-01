@@ -1,0 +1,62 @@
+.containerSectionFooter {
+    width: 100%;
+    max-width: 100vw;
+    min-width: 150px;
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    width: 100%;
+    max-width: 2200px;
+    min-width: 300px;
+    height: max-content;
+    background-color: #156669;   
+}
+
+.footerImgLogo{
+    display: grid;
+    position: relative;
+    justify-content: center;
+}
+
+#idLogoFooter {
+    width: 80px;
+    height: auto;
+}
+.footerInfo{
+    display: grid;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 1.3em;
+    gap: 20px;
+}
+.containersFooterinfo{
+    display: grid;
+    height: max-content;
+}
+
+#infoInicialFooter{
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    .footer{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+        text-align: center;
+    }
+    .footerInfo{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+}

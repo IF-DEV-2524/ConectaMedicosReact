@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
 import logo from '../../images/logo.png'
-//import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './Home.css'
 
-function Index() {
+function Home() {
 
   const [active, setActive] = useState(false);
 
@@ -34,12 +32,12 @@ function Index() {
 
           <ul className='controladorList'>
 
-            <li id='page0' className='listPages'><button className='btnNavegador'>INÍCIO</button></li>
-            <li id='page1' className='listPages'><button className='btnNavegador'>CONSULTAR</button></li>
-            <li id='page2' className='listPages'><button className='btnNavegador'>CADASTRAR</button></li>
-            <li id='page3' className='listPages'><button className='btnNavegador'>AGENDAMENTO</button></li>
-            <li id='page4' className='listPages'><button className='btnNavegador'>COMENTÁRIOS</button></li>
-            <li id='page5' className='listPages'><button className='btnNavegador'>FALE CONOSCO</button></li>
+            <li id='page0' className='listPages'><button className='btnNavegador'><span id='itemBtn1'>INÍCIO </span></button></li>
+            <li id='page1' className='listPages'><button className='btnNavegador'><span id='itemBtn2'>CONSULTAR</span></button></li>
+            <li id='page2' className='listPages'><button className='btnNavegador'><span id='itemBtn3'>CADASTRAR</span></button></li>
+            <li id='page3' className='listPages'><button className='btnNavegador'><span id='itemBtn4'>AGENDAMENTO</span></button></li>
+            <li id='page4' className='listPages'><button className='btnNavegador'><span id='itemBtn5'>COMENTÁRIOS</span></button></li>
+            <li id='page5' className='listPages'><button className='btnNavegador'><span id='itemBtn6'>FALE CONOSCO</span></button></li>
           </ul>
 
         </nav>
@@ -51,4 +49,4 @@ function Index() {
   )
 }
 
-export default Index
+export default Home

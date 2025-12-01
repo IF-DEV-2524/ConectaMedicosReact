@@ -1,27 +1,35 @@
 * {
-    margin: 0;
-    padding: 0;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .container {
     display: flex;
+    position: fixed;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
+    max-width: 100vw;
     min-width: 150px;
-    background-color: #208a5879
+    background-color: #068e93;
+    top:50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000000000;
 }
 
 .head {
     display: flex;
+    position: relative;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
     max-width: 2200px;
     margin: 0 auto;
-    background-color: #208a5879;
-    padding: 20px;
+    background-color: #156669;
     text-align: center;
+    justify-content: space-evenly;
 }
 
 #logo {
@@ -45,7 +53,6 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-left: auto;
     background-color: white;
 }
 
@@ -55,10 +62,8 @@
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    gap: 20px;
-    margin-left: 50px;
+    gap: 10px;
     font-family: "Elms Sans", sans-serif;
-    ;
 }
 
 .listPages {
@@ -66,7 +71,7 @@
     background-color: rgb(6, 6, 105);
     border-radius: 5% !important;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.2em !important;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -79,15 +84,14 @@
 #page5:hover {
     transform: scale(1.1);
     background-color: rgba(97, 223, 181, 0.5);
+    z-index: 10;
     transition: 0.5s;
 }
 
 .btnNavegador {
     display: flex !important;
     background-color: transparent;
-    border-radius: 30% !important;
     color: white;
-    font-size: 1.5em;
     cursor: pointer;
 }
 
@@ -102,28 +106,27 @@
     }
 }
 
+
+
 @media (max-width: 1840px) {
-    .controladorList {
-        margin-left: 20px;
-    }
-
-    .userImage {
-        position: relative;
-        top: -70px
-    }
-}
-
-@media (max-width: 1450px) {
 
     .head {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         height: 140px;
+        padding: 0px !important;
+        z-index: 10000;
     }
 
     .userImage {
         position: relative;
         top: -0px !important;
+        margin-left: auto;
+    }
+
+
+    .centralizaTexto {
+        margin: 0px;
     }
 
     #btnMobile {
@@ -131,15 +134,11 @@
         position: relative;
         width: 50px;
         height: 50px;
-        background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(6px);
-        border-radius: 10px;
-        border-radius: 10%;
     }
 
     .efectsBtn {
         position: absolute;
-        top: 40%;
+        top: 50%;
         width: 100%;
         height: 5px;
         background-color: black;
@@ -147,11 +146,11 @@
     }
 
     .efectsBtn.active {
-        animation: activeBtn 2s forwards;
+        animation: activeBtn 1s forwards;
     }
 
     .efectsBtn.desactive {
-        animation: DesactiveBtn 2s forwards;
+        animation: DesactiveBtn 1s forwards;
     }
 
     @keyframes activeBtn {
@@ -188,7 +187,7 @@
         height: 5px;
         background-color: black;
         border-radius: 25%;
-        animation: btnTranslateDesactive 2s forwards;
+        animation: btnTranslateDesactive 1s forwards;
     }
 
     .efectsBtn::before {
@@ -200,26 +199,26 @@
         height: 5px;
         background-color: black;
         border-radius: 25%;
-        animation: btnTranslabtnTranslateDesactive 2s forwards;
+        animation: btnTranslabtnTranslateDesactive 1s forwards;
     }
 
     .efectsBtn.active::after {
-        animation: btnTranslateaActiveAfter 2s forwards;
+        animation: btnTranslateActiveAfter 1s forwards;
     }
 
     .efectsBtn.active::before {
-        animation: btnTranslateActiveBefore 2s forwards;
+        animation: btnTranslateActiveBefore 1s forwards;
     }
 
     .efectsBtn.desactive::after {
-        animation: btnTranslateDesactiveAfter 2s ease forwards;
+        animation: btnTranslateDesactiveAfter 1s ease forwards;
     }
 
     .efectsBtn.desactive::before {
-        animation: btnTranslateDesactiveBefore 3s ease forwards;
+        animation: btnTranslateDesactiveBefore 1s ease forwards;
     }
 
-    @keyframes btnTranslateaActiveAfter {
+    @keyframes btnTranslateActiveAfter {
         0% {
 
             transform: translate(0px, 0px);
@@ -287,22 +286,96 @@
         }
     }
 
-    .navegaPgn.efectsBtn.desactive{
+    .navegaPgn.efectsBtn.desactive {
         position: absolute;
-        width: 120px
-       }
+
+    }
+
+    .navegaPgn.active {
+        position: absolute;
+        width: 100%;
+        animation: navegadorActive 1s forwards;
+        background-color: rgba(169, 11, 11, 0.2);
+        backdrop-filter: blur(6px);
+        z-index: 1000;
+    }
+
+    @keyframes navegadorActive {
+        0% {
+            opacity: 0;
+            transform: translateY(-570px);
+        }
+        20% {
+            opacity: 0;
+            transform: translateY(-300px);
+        }
+
+        40% {
+            opacity: 0;
+            transform: translateY(-0px);
+        }
+
+        60% {
+            opacity: 0.2;
+            transform: translateY(35px);
+        }
+
+        80% {
+            opacity: 0.2;
+            transform: translateY(75px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(70px);
+        }
+    }
+
+    .navegaPgn.desactive {
+        position: absolute;
+        width: 100%;
+        animation: navegadorDesactive 1s forwards;
+    }
+
+
+    @keyframes navegadorDesactive {
+        0% {
+            opacity: 1;
+            transform: translateY(70px);
+        }
+
+        20% {
+            opacity: 0.2;
+            transform: translateY(35px);
+        }
+
+        40% {
+            opacity: 0;
+            transform: translateY(0px);
+        }
+
+        60% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(-500px);
+        }
+    }
 
     .controladorList {
         position: absolute;
         flex-direction: column;
-
+        padding: 0px 0px 15px 0px !important;
+        border-radius: 4%;
+        margin: 0px !important;
         flex-wrap: wrap;
         gap: 10px;
-        margin-left: 0;
-        width: 100vw;
-        max-width: 1370px;
+        width: 100%;
         min-width: 120px;
-
+        background-color: #156669;
+        backdrop-filter: blur(6px);
     }
 
     .userImage {
@@ -310,23 +383,46 @@
         top: -140px
     }
 
-    .navegaPgn.desactive{
-        position: absolute;
-        transform: translateY(-500px);
-    }
-    
-    .listPages{
+    .listPages {
         width: 100%;
+        height: 100%;
+        border: none !important;
     }
 
-    .btnNavegador{
+    .btnNavegador {
         width: 100%;
         justify-content: space-evenly;
     }
 
-    #controleCentral{
+    #controleCentral {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .btnNavegador {
+        height: 100%;
+        padding: 0px !important;
+        border: none !important;
+    }
+
+    .btnNavegador:hover {
+        border-color: transparent !important;
+        color: rgba(6, 6, 105, 0.5) !important;
+        font-weight: bold !important;
+    }
+
+    #page0:hover,
+    #page1:hover,
+    #page2:hover,
+    #page3:hover,
+    #page4:hover,
+    #page5:hover {
+        transform: none;
+        color: rgb(6, 6, 105) !important;
+        font-size: 1.2em;
+        font-weight: bold !important;
+        background-color: rgb(245, 247, 247) !important;
+        transition: 0.5s;
     }
 }
